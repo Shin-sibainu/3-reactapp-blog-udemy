@@ -8,7 +8,9 @@ import { useState } from "react";
 import Logout from "./components/Logout";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(
+    useState(localStorage.getItem("isAuth"))
+  );
   return (
     <Router>
       <Navbar isAuth={isAuth} />
